@@ -7,6 +7,7 @@
 
 * [Helpfull Ui Projects](open-source/helpfull-ui-projects.md)
 * [Usefull Open Source Projects](open-source/usefull-open-source-projects.md)
+* [Install after format](open-source/install-after-format.md)
 
 ## Linux
 
