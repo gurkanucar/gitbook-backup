@@ -3,8 +3,11 @@
 **Java Basics**
 
 * Differences Between Class Variables and Instance Variables
+* JVM, sdk, jdk, jre
+* Compiling with `javac` Compiler / Byte Codes, jvm etc
 * Default Values of Primitive Data Types in Java
 * Understanding Access Modifiers in Java
+* The Just-In-Time (JIT) Compiler in Java
 * The Role of the `final` Keyword (Methods, Classes) and Effectively Final Variables
 * Utilizing `super` and `this` Keywords
 * Characteristics of Static Variables in Java
@@ -49,7 +52,6 @@
 * The String Pool and String Interning
 * Shallow Copy vs. Deep Copy vs. Cloning Objects
 * Serialization and the Role of `serialVersionUID`
-* The Just-In-Time (JIT) Compiler in Java
 * Alternatives to the Deprecated `finalize()` Method
 
 **Concurrency in Java**
@@ -153,7 +155,8 @@
 * Building Queries with Criteria API and Specifications
 * Solving the N+1 Query Problem in JPA
 * Hibernate, jpa etc.
-* onet to many, one to one, many to many relations
+* one to one, one to many, many to many relations
+* soft delete / SQLDelete & SQLRestriction("status <> 'DELETED')
 
 **Spring Security and Resilience**
 
@@ -213,6 +216,8 @@
 * Principles of Event-Driven Architecture
 * Implementing the Saga Pattern
 * Managing Cross-Cutting Concerns in Microservices
+* Config Server
+* HashiCorp Secret Vault
 
 **Web Technologies**
 
@@ -245,7 +250,6 @@
 **Build and Deployment**
 
 * Differences Among JAR, WAR, and EAR Files
-* Compiling with `javac` Compiler
 * Introduction to CI/CD Pipelines
 * Deploying Applications on Tomcat Server
 * Basics of Docker and Containerization
@@ -306,3 +310,15 @@
 * React Hooks: `useEffect` vs. `useLayoutEffect`
 * Fundamentals of A/B Testing
 * Using `@SneakyThrows` in Lombok
+
+**Server**
+
+* nginx (file streaming, nginx proxyman)
+* apisix api gateway
+* nano text editor commands
+* s3 partial file upload / download
+* docker basic commands
+* openshift basic commands
+
+
+
