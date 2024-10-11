@@ -23,3 +23,7 @@ After installation completed open admin ui (protocol must be https):
 Also dont forget to allow port 943 using ufw.
 
 To get connection config open `https://your_server_ip_or_domain_name:943` then login and retrieve configuration.
+
+
+
+Not that, while using nginx and openvpn first you have to change host in openvpn access erver admin page then you should set http->https in nginx .
