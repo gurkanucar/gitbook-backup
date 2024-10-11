@@ -57,3 +57,8 @@
 ## Development
 
 * [Development Standards](development/development-standards.md)
+
+## research
+
+* [Keywords for research](research/keywords-for-research.md)
+* [Page](research/page.md)
