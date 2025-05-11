@@ -1,6 +1,14 @@
 # Nginx Nedir? Neden Kullanilir?
 
+title: "Nginx Nedir? Neden Kullanilir?"\
+source: https://www.gurkanucar.com/nginx-nedir-neden-kullanilir/\
+date: 2025-05-11 12:40\
+tags:\
+description:
+
 [source](https://www.gurkanucar.com/nginx-nedir-neden-kullanilir/)
+
+## Nginx Nedir? Neden Kullanilir?
 
 By [gurkanucar](https://www.gurkanucar.com/author/gurkanucar/) --- 16 Apr 2025
 
@@ -8,7 +16,7 @@ Nginx, temel olarak açık kaynaklı ve yüksek performanslı bir web sunucusudu
 
 Nginx, özellikle bir domain'i belirli bir IP adresiyle eşleştirip SSL üzerinden güvenli bağlantılar kurmak istediğimizde sıkça tercih edilir. Bununla birlikte; **yük dengeleme (load balancing)**, **önbellekleme (caching)**, **statik dosya sunumu** ve bazı **e-posta servisleri için proxy desteği** gibi birçok gelişmiş özelliği de destekler.
 
-\*\*\*\*NOT\*\*\*\*: production ortamlarda ip adresi ve portlardan ziyade domain ve subdomain adresleri kullanılır. Nginx, bu domain/subdomainlere gelen istekleri sunucu içerisinde ilgili porta yönlendirmede büyük önem taşır.
+**NOT**: production ortamlarda ip adresi ve portlardan ziyade domain ve subdomain adresleri kullanılır. Nginx, bu domain/subdomainlere gelen istekleri sunucu içerisinde ilgili porta yönlendirmede büyük önem taşır.
 
 **Kurulum**\
 Aşağıdaki komutları linux ortamda çalıştırarak NGINX kurabilirsiniz.
@@ -117,16 +125,14 @@ Domain adımız için, web root dizini oluşturalım. Sonrasında ise içerisine
 # create directory
 sudo mkdir -p /var/www/subdomain.gurkanucar.com
 # create html file
-echo '<h1>Hello, World!</h1>' | sudo tee /var/www/subdomain.gurkanucar.com/index.html
+echo 'Hello, World!' | sudo tee /var/www/subdomain.gurkanucar.com/index.html
 ```
 
 Sonrasında ise kendi DNS sağlayıcımıza gidip, subdomain ve sunucu ip adresimizi ekleyelim:
 
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-4.png" alt="subdomain.gurkanucar.com"><figcaption><p>subdomain.gurkanucar.com</p></figcaption></figure>
+![subdomain.gurkanucar.com](https://www.gurkanucar.com/content/images/2025/04/image-4.png)
 
-&#x20;
-
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-5.png" alt="image"><figcaption><p>image</p></figcaption></figure>
+![image](https://www.gurkanucar.com/content/images/2025/04/image-5.png)
 
 Yukarıda görmüş olduğunuz gibi subdomain ile, oluşturduğumuz `Hello World!` örneğine erişebildik. Fakat bir sorun var. URL in yanında `not secure` uyarısını görmektesiniz. Bunu düzeltebilmek için ssl eklememiz gerekmekte.
 
@@ -169,16 +175,16 @@ server {
 
 Ve tekrardan sitemize girdigimizde ise SSL sertifikasinin çalıştığını göreceğiz:
 
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-6.png" alt="image"><figcaption><p>image</p></figcaption></figure>
+![image](https://www.gurkanucar.com/content/images/2025/04/image-6.png)
 
 Ek olarak aşağıdaki 2 konfigürasyonun da eklenmesi güveliği artıracaktır:
 
-```
- `# SSL Protocols
-ssl_protocols TLSv1.2 TLSv1.3;
-# HSTS (HTTP Strict Transport Security) activate
-add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;` 
-```
+\`# SSL Protocols\
+ssl\_protocols TLSv1.2 TLSv1.3;
+
+## HSTS (HTTP Strict Transport Security) activate
+
+add\_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;\`
 
 TLS 1.3 en guncel sifreleme protokollerinden biridir. HSTS ise bir kez https kullanildiysa her zaman https uzerinden haberlesilmesi gerekliligini saglar
 
@@ -241,7 +247,7 @@ drwxr-xr-x 5 root root   4096 Apr 16 21:55 ..
 
 ![](https://www.gurkanucar.com/content/images/2025/04/image-8.png)
 
-\[https://subdomain.gurkanucar.com/data.json]\(https://subdomain.gurkanucar.com/data.json?ref=gurkanucar.com) | \[https://subdomain.gurkanucar.com/istanbul.jpg]\(https://subdomain.gurkanucar.com/data.json?ref=gurkanucar.com)
+[https://subdomain.gurkanucar.com/data.json](https://subdomain.gurkanucar.com/data.json?ref=gurkanucar.com) | [https://subdomain.gurkanucar.com/istanbul.jpg](https://subdomain.gurkanucar.com/data.json?ref=gurkanucar.com)
 
 Veya ozel bir konumdaki dosyayi da asagidaki sekilde serve edebiliriz:
 
@@ -262,11 +268,11 @@ Veya ozel bir konumdaki dosyayi da asagidaki sekilde serve edebiliriz:
     }   
 ```
 
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-16.png" alt="https://subdomain.gurkanucar.com/configs/app.json"><figcaption><p><a href="https://subdomain.gurkanucar.com/configs/app.json?ref=gurkanucar.com">https://subdomain.gurkanucar.com/configs/app.json</a></p></figcaption></figure>
+![">5](https://www.gurkanucar.com/content/images/2025/04/image-16.png)">https://subdomain.gurkanucar.com/configs/app.json][5](https://subdomain.gurkanucar.com/configs/app.json?ref=gurkanucar.com)][6](https://www.gurkanucar.com/content/images/2025/04/image-16.png)
 
 ‼️
 
-Eğer 403 hatası alırsanız, dosya ve klasörlerin read yetkisini kontrol edin. Buna rağmen hata almaya devam ediyorsanız çok yüksek ihtimal ile \*\*\*\*SELinux\*\*\*\* enable olduğundan dolayı olabilir.
+Eğer 403 hatası alırsanız, dosya ve klasörlerin read yetkisini kontrol edin. Buna rağmen hata almaya devam ediyorsanız çok yüksek ihtimal ile **SELinux** enable olduğundan dolayı olabilir.
 
 **NodeJS web sunucu uygulamasina yonlendirme**\
 Simdi ise basit bir node js uygulaması oluşturalım ve gelen istekleri oraya yönlendirelim.
@@ -320,9 +326,9 @@ Ardindan nginx restart edelim
 nginx -t && sudo systemctl reload nginx
 ```
 
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-9.png" alt="image"><figcaption><p>image</p></figcaption></figure>
+![image](https://www.gurkanucar.com/content/images/2025/04/image-9.png)
 
-Görmüş olduğunuz üzere [`https://subdomain.gurkanucar.com/api`](https://subdomain.gurkanucar.com/api?ref=gurkanucar.com) adresi uzerinden servisimize erişebildik.
+Görmüş olduğunuz üzere [`">https://subdomain.gurkanucar.com/api`](https://subdomain.gurkanucar.com/api?ref=gurkanucar.com) adresi uzerinden servisimize erişebildik.
 
 **Peki websocket de eklemek istersek ne yapmalıyız?**\
 Websocket eklemek için Nginx tarafında ufak bir güncelleme yapmak gerekecek. Once uygulamaya websocket ekleyelim:
@@ -403,15 +409,15 @@ Ardindan nginx konfigurasyonunu güncelleyelim:
     
 ```
 
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-10.png" alt="wss://subdomain.gurkanucar.com/api/ws"><figcaption><p>wss://subdomain.gurkanucar.com/api/ws</p></figcaption></figure>
+![wss://subdomain.gurkanucar.com/api/ws](https://www.gurkanucar.com/content/images/2025/04/image-10.png)
 
 Görmüş olduğunuz üzere websocket de başarılı bir şekilde çalıştı.
 
-#### Load Balancing <a href="#load-balancing" id="load-balancing"></a>
+#### Load Balancing
 
 Nginx in en önemli özelliklerinden bir diğeri ise load balancing yapabilmesi. Load balancing, gelen istekleri uygulama node larına dağtımak ve performansı artırmak anlamına gelmektedir. `upstream` kullanarak nginx de load balancing yapabiliriz.
 
-Upstream tanimlamasini, server bloğunun üzerinde gerçekleştirmeliyiz. Ardindan az önce tanımladığımız 3000 portlu proxy pass'ı (`proxy_pass`[`http://localhost:3000`](http://localhost:3000/?ref=gurkanucar.com)`;`) upstream ile degistirmeliyiz.
+Upstream tanimlamasini, server bloğunun üzerinde gerçekleştirmeliyiz. Ardindan az önce tanımladığımız 3000 portlu proxy pass'ı (`proxy_pass` [\`\`;`">http://localhost:3000`](http://localhost:3000/?ref=gurkanucar.com)`;`) upstream ile degistirmeliyiz.
 
 ```
 # load balancing
@@ -436,7 +442,7 @@ server {
 
 ![](https://www.gurkanucar.com/content/images/2025/04/image-12.png)
 
-#### Load Balancing <a href="#load-balancing-1" id="load-balancing-1"></a>
+#### Load Balancing
 
 Basic authentication her ne kadar cogu zaman web uygulama sunucusunda eklense de, nginx ile de ekleyebilmek mumkun. Ornegin bazi docker servislerimizi dis dunyaya acarken onune basic authentication eklemek isteyebiliriz.
 
@@ -496,11 +502,9 @@ location /api/ {
         
 ```
 
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-13.png" alt="401 hatasi"><figcaption><p>401 hatasi</p></figcaption></figure>
+![401 hatasi](https://www.gurkanucar.com/content/images/2025/04/image-13.png)
 
-&#x20;
-
-<figure><img src="https://www.gurkanucar.com/content/images/2025/04/image-14.png" alt="dogru username ve password girildiginde"><figcaption><p>dogru username ve password girildiginde</p></figcaption></figure>
+![dogru username ve password girildiginde](https://www.gurkanucar.com/content/images/2025/04/image-14.png)
 
 * nginx performans onerileri / performance tunning
 
